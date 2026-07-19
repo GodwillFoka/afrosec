@@ -1,0 +1,11 @@
+django>=5.0,<5.1
+djangorestframework
+django-crispy-forms
+crispy-bootstrap5
+pillow
+django-ckeditor
+gunicorn
+psycopg2-binary
+python-decouple
+whitenoise
+dj-database-url

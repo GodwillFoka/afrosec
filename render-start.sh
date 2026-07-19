@@ -1,0 +1,2 @@
+# Build command
+./build.sh

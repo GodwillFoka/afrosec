@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ article.title }} — AfroSec{% endblock %}
+{% block meta_desc %}{{ article.excerpt }}{% endblock %}
+
+{% block content %}
+
+<article class="py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'blog_list' %}">Blog</a></li>
+                        <li class="breadcrumb-item active">{{ article.title|truncatewords:5 }}</li>
+                    </ol>
+                </nav>
+
+                <span class="category d-block mb-2">
+                    {% if article.category %}{{ article.category.name }}{% else %}Article{% endif %}
+                </span>
+                <h1 class="fw-bold display-5 mb-3">{{ article.title }}</h1>
+                
+                <div class="d-flex align-items-center text-muted mb-4">
+                    <span><i class="bi bi-person me-1"></i>{{ article.author_name }}</span>
+                    <span class="mx-3">|</span>
+                    <span><i class="bi bi-calendar3 me-1"></i>{{ article.created_at|date:"d F Y" }}</span>
+                </div>
+
+                {% if article.image %}
+                <img src="{{ article.image.url }}" class="img-fluid rounded-4 mb-4 w-100" alt="{{ article.title }}" style="max-height: 400px; object-fit: cover;">
+                {% endif %}
+
+                <div class="article-content">
+                    {{ article.content|safe }}
+                </div>
+
+                <hr class="my-5">
+
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'blog_list' %}" class="btn btn-outline-secondary rounded-pill">
+                        <i class="bi bi-arrow-left me-1"></i> Retour au blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+{% if recent_articles %}
+<section class="py-5 section-gray">
+    <div class="container py-5">
+        <h3 class="fw-bold mb-4">Articles récents</h3>
+        <div class="row g-4">
+            {% for recent in recent_articles %}
+            <div class="col-md-4">
+                <div class="blog-card h-100">
+                    <div class="card-body">
+                        <span class="category">{% if recent.category %}{{ recent.category.name }}{% endif %}</span>
+                        <h5><a href="{% url 'blog_detail' recent.slug %}" class="text-decoration-none text-dark">{{ recent.title }}</a></h5>
+                        <p class="excerpt">{{ recent.excerpt|truncatewords:15 }}</p>
+                        <span class="date">{{ recent.created_at|date:"d F Y" }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.article-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
+.article-content h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; }
+.article-content p { line-height: 1.8; margin-bottom: 1.2rem; font-size: 1.05rem; }
+.article-content ul, .article-content ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
+.article-content li { line-height: 1.8; margin-bottom: 0.3rem; }
+.article-content blockquote { border-left: 4px solid var(--afrosec-red); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--afrosec-gray); }
+.article-content img { border-radius: 12px; max-width: 100%; margin: 1.5rem 0; }
+</style>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Message envoyé — AfroSec{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container py-5 text-center text-white">
+        <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: #10B981;"></i>
+        <h1 class="fw-bold display-5 mt-3">Message envoyé !</h1>
+        <p class="text-white-50">Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.</p>
+        <a href="{% url 'home' %}" class="btn-primary-custom mt-3">Retour à l'accueil</a>
+    </div>
+</section>
+{% endblock %}

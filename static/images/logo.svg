@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B41414;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8F0F0F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Bouclier -->
+  <g transform="translate(10, 10)">
+    <path d="M40 0 L80 10 L80 45 C80 65 60 80 40 90 C20 80 0 65 0 45 L0 10 Z" 
+          fill="url(#shieldGrad)" opacity="0.9"/>
+    <path d="M40 15 L40 75 M25 35 L40 45 L55 35" 
+          fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Texte AfroSec -->
+  <text x="100" y="55" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="48" fill="#0F172A" letter-spacing="-1">
+    Afro<tspan fill="#B41414">Sec</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="102" y="80" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#64748B" letter-spacing="1">
+    HUB TECHNOLOGIQUE AFRICAIN
+  </text>
+</svg>

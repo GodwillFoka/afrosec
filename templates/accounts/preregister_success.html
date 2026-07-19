@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inscription réussie — AfroSec{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container py-5 text-center text-white">
+        <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: #10B981;"></i>
+        <h1 class="fw-bold display-5 mt-3">Bienvenue dans la communauté AfroSec ! 🎉</h1>
+        <p class="text-white-50" style="max-width: 550px; margin: 0 auto;">
+            Votre inscription a bien été prise en compte. Nous vous contacterons très bientôt avec les prochaines étapes pour rejoindre la communauté.
+        </p>
+        <div class="mt-4">
+            <a href="{% url 'home' %}" class="btn-primary-custom">Retour à l'accueil</a>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container text-center py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="fw-bold mb-3">En attendant...</h3>
+                <div class="row g-3 mt-4">
+                    <div class="col-md-4">
+                        <div class="p-4" style="background: var(--afrosec-gray-light); border-radius: 16px;">
+                            <i class="bi bi-linkedin" style="font-size: 2rem; color: var(--afrosec-red);"></i>
+                            <p class="fw-semibold mt-2 mb-0 small">Suivez-nous sur LinkedIn</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4" style="background: var(--afrosec-gray-light); border-radius: 16px;">
+                            <i class="bi bi-envelope" style="font-size: 2rem; color: var(--afrosec-red);"></i>
+                            <p class="fw-semibold mt-2 mb-0 small">Consultez vos emails</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4" style="background: var(--afrosec-gray-light); border-radius: 16px;">
+                            <i class="bi bi-newspaper" style="font-size: 2rem; color: var(--afrosec-red);"></i>
+                            <p class="fw-semibold mt-2 mb-0 small">Explorez le blog</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

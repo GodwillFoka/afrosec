@@ -1,0 +1,608 @@
+/* ============================================
+   AFROSEC — DESIGN SYSTEM
+   ============================================ */
+
+:root {
+    /* Couleurs primaires */
+    --afrosec-red: #B41414;
+    --afrosec-red-dark: #8F0F0F;
+    --afrosec-red-light: #E82020;
+    
+    /* Couleurs secondaires */
+    --afrosec-dark: #0F172A;
+    --afrosec-dark-2: #1E293B;
+    --afrosec-gray: #64748B;
+    --afrosec-gray-light: #F1F5F9;
+    
+    /* Accents */
+    --afrosec-gold: #F59E0B;
+    --afrosec-cyan: #06B6D4;
+    --afrosec-green: #10B981;
+    
+    /* Typographie */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Espacement */
+    --section-padding: 6rem 0;
+}
+
+/* ============================================
+   RÉINITIALISATION
+   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-primary);
+    color: var(--afrosec-dark);
+    overflow-x: hidden;
+    padding-top: 72px;
+    background: #ffffff;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar-afrosec {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar-afrosec .navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: white !important;
+    letter-spacing: -0.5px;
+}
+
+.navbar-afrosec .navbar-brand span {
+    color: var(--afrosec-red);
+}
+
+.navbar-afrosec .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+}
+
+.navbar-afrosec .nav-link:hover {
+    color: white !important;
+}
+
+.btn-afrosec {
+    background: var(--afrosec-red);
+    color: white;
+    border: none;
+    padding: 0.55rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn-afrosec:hover {
+    background: var(--afrosec-red-dark);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(180, 20, 20, 0.3);
+}
+
+/* ============================================
+   PAGE HEADER (banière interne)
+   ============================================ */
+.page-header {
+    background: linear-gradient(135deg, var(--afrosec-dark) 0%, #1a0a0a 50%, var(--afrosec-dark-2) 100%);
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 50%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(180, 20, 20, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    background: linear-gradient(135deg, var(--afrosec-dark) 0%, #1a0a0a 50%, var(--afrosec-dark-2) 100%);
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(180, 20, 20, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, #ffffff, transparent);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.12;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.hero-section h1 .highlight {
+    color: var(--afrosec-red);
+}
+
+.hero-section .lead {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 600px;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+}
+
+.hero-cta .btn-primary-custom {
+    background: var(--afrosec-red);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero-cta .btn-primary-custom:hover {
+    background: var(--afrosec-red-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(180, 20, 20, 0.35);
+}
+
+.hero-cta .btn-outline-custom {
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.hero-cta .btn-outline-custom:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+.stats-section {
+    background: white;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.stat-item .counter {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--afrosec-red);
+    display: block;
+    line-height: 1.1;
+}
+
+.stat-item .label {
+    color: var(--afrosec-gray);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    color: var(--afrosec-gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.section-gray {
+    background: var(--afrosec-gray-light);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.card-afrosec {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+}
+
+.card-afrosec:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    border-color: rgba(180, 20, 20, 0.2);
+}
+
+.card-afrosec .icon {
+    width: 60px;
+    height: 60px;
+    background: var(--afrosec-gray-light);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--afrosec-red);
+}
+
+.card-afrosec h5 {
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.card-afrosec p {
+    color: var(--afrosec-gray);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* ============================================
+   VALEURS / DOMAINES
+   ============================================ */
+.value-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    border: 1px solid rgba(180, 20, 20, 0.08);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.value-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border-color: rgba(180, 20, 20, 0.2);
+}
+
+.domain-emoji {
+    font-size: 2.2rem !important;
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-left: 2px solid var(--afrosec-red);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    background: var(--afrosec-red);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--afrosec-red);
+}
+
+.timeline-item .year {
+    font-weight: 700;
+    color: var(--afrosec-red);
+    display: block;
+}
+
+/* ============================================
+   BLOG CARDS
+   ============================================ */
+.blog-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.blog-card .card-body {
+    padding: 1.5rem;
+}
+
+.blog-card .category {
+    color: var(--afrosec-red);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.blog-card h5 {
+    font-weight: 700;
+    margin: 0.5rem 0 0.8rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.blog-card .excerpt {
+    color: var(--afrosec-gray);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.blog-card .date {
+    color: var(--afrosec-gray);
+    font-size: 0.85rem;
+}
+
+.blog-card-img-placeholder {
+    height: 200px;
+    background: var(--afrosec-gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #CBD5E1;
+}
+
+/* ============================================
+   FORMULAIRES
+   ============================================ */
+.form-afrosec .form-control,
+.form-afrosec .form-select {
+    border: 2px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-afrosec .form-control:focus,
+.form-afrosec .form-select:focus {
+    border-color: var(--afrosec-red);
+    box-shadow: 0 0 0 3px rgba(180, 20, 20, 0.1);
+}
+
+.form-afrosec .form-check-input:checked {
+    background-color: var(--afrosec-red);
+    border-color: var(--afrosec-red);
+}
+
+.form-afrosec label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.form-afrosec .btn-submit {
+    background: var(--afrosec-red);
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-afrosec .btn-submit:hover {
+    background: var(--afrosec-red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(180, 20, 20, 0.3);
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+    background: linear-gradient(135deg, var(--afrosec-dark), #1a0a0a, var(--afrosec-dark-2));
+    position: relative;
+}
+
+.cta-section .btn-primary-custom {
+    background: var(--afrosec-red);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-section .btn-primary-custom:hover {
+    background: var(--afrosec-red-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(180, 20, 20, 0.35);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer-afrosec {
+    background: #0a0f1a;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4rem 0 2rem;
+}
+
+.footer-afrosec h5 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-afrosec a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-afrosec a:hover {
+    color: var(--afrosec-red);
+}
+
+.footer-afrosec .brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.footer-afrosec .brand span {
+    color: var(--afrosec-red);
+}
+
+.footer-afrosec .social-links a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.footer-afrosec .social-links a:hover {
+    border-color: var(--afrosec-red);
+    background: rgba(180, 20, 20, 0.1);
+    color: var(--afrosec-red);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 2rem;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.page-link {
+    color: var(--afrosec-dark);
+    border-radius: 8px;
+    margin: 0 2px;
+    border: none;
+    font-weight: 500;
+}
+
+.page-link:hover {
+    color: var(--afrosec-red);
+    background: var(--afrosec-gray-light);
+}
+
+.page-item.active .page-link {
+    background: var(--afrosec-red);
+    border-color: var(--afrosec-red);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .hero-section h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+    body { padding-top: 65px; }
+    
+    .hero-section { min-height: 80vh; }
+    .hero-section h1 { font-size: 2.2rem; }
+    .hero-cta .btn-outline-custom { margin-left: 0; margin-top: 1rem; display: block; text-align: center; }
+    .hero-cta .btn-primary-custom { display: block; text-align: center; }
+    
+    .page-header { min-height: 25vh; }
+    .page-header h1 { font-size: 2rem; }
+    
+    .section-title { font-size: 1.8rem; }
+    .stat-item { margin-bottom: 1.5rem; }
+    .stat-item .counter { font-size: 2.2rem; }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 { font-size: 1.8rem; }
+    .section-title { font-size: 1.5rem; }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

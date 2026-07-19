@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static crispy_forms_tags %}
+
+{% block title %}Contact — AfroSec{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container py-5 text-center text-white">
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-2 mb-3 rounded-pill">
+            <i class="bi bi-envelope me-1"></i> Nous écrire
+        </span>
+        <h1 class="fw-bold display-4">Contactez-nous</h1>
+        <p class="text-white-50" style="max-width: 500px; margin: 0 auto;">Une question, une suggestion, une envie de collaborer ? Écrivez-nous !</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <h3 class="fw-bold mb-4">Envoyez-nous un message</h3>
+                <form method="post" class="form-afrosec">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-submit mt-3">
+                        <i class="bi bi-send me-2"></i>Envoyer le message
+                    </button>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <div class="p-4" style="background: var(--afrosec-gray-light); border-radius: 20px;">
+                    <h4 class="fw-bold mb-4">Informations</h4>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-3" style="width: 48px; height: 48px; background: rgba(180,20,20,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="bi bi-envelope" style="color: var(--afrosec-red);"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted">Email</small>
+                            <p class="fw-semibold mb-0">contact@afrosec.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-3" style="width: 48px; height: 48px; background: rgba(180,20,20,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="bi bi-geo-alt" style="color: var(--afrosec-red);"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted">Localisation</small>
+                            <p class="fw-semibold mb-0">Berlin, Deutschland</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-3" style="width: 48px; height: 48px; background: rgba(180,20,20,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="bi bi-linkedin" style="color: var(--afrosec-red);"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted">LinkedIn</small>
+                            <p class="fw-semibold mb-0">@AfroSecHub</p>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
+                    <h5 class="fw-bold mb-3">Questions fréquentes</h5>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 mb-2">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-white shadow-sm rounded" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <small class="fw-semibold">Comment rejoindre AfroSec ?</small>
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body small text-muted">
+                                    Remplissez le formulaire d'inscription sur la page "Rejoindre" et vous serez intégré à notre communauté.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-2">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-white shadow-sm rounded" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <small class="fw-semibold">AfroSec est-il ouvert à tous ?</small>
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body small text-muted">
+                                    Oui, AfroSec est ouvert à tous les talents africains et amis de l'Afrique, étudiants comme professionnels.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-white shadow-sm rounded" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <small class="fw-semibold">Puis-je devenir partenaire ?</small>
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body small text-muted">
+                                    Absolument ! Contactez-nous via ce formulaire avec vos coordonnées et nous vous recontacterons.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
