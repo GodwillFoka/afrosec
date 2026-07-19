@@ -2,6 +2,11 @@
 # Build script for Render.com Django deployment
 set -o errexit
 
+echo "🔧 Début du build AfroSec..."
+
+# Afficher la version Python
+echo "Python version: $(python --version)"
+
 # Install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -18,7 +23,9 @@ import os
 from django.contrib.auth.models import User
 if not User.objects.filter(username='admin').exists():
     User.objects.create_superuser('admin', 'admin@afrosec.org', 'AfroSec2026!')
-    print('Superuser created')
+    print('✅ Superuser admin created')
 else:
-    print('Superuser already exists')
+    print('✅ Superuser admin already exists')
 "
+
+echo "✅ Build terminé avec succès !"

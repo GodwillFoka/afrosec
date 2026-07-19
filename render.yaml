@@ -13,11 +13,7 @@ services:
         generateValue: true
       - key: ALLOWED_HOSTS
         value: afrosec.onrender.com,www.afrosec.onrender.com
-      - key: PYTHON_VERSION
-        value: 3.11.2
       - key: PORT
         value: 8000
-      - key: DISABLE_COLLECTSTATIC
-        value: 1
       - key: WEB_CONCURRENCY
         value: 4
